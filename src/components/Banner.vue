@@ -21,6 +21,10 @@ export default {
   width: 100vw;
   background-color: rgb(52, 147, 231);
   color: white;
+  box-shadow: 0px 1px 9px #3f3e3e;
+  position:relative;
+  z-index: 100;
+  
 }
 
 </style>

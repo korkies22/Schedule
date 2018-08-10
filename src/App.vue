@@ -412,9 +412,10 @@ body{
 }
 .schedule-container{
   width: 100%;
-  height: 900px;
+  height: calc(100vh - 80px);
   font-size: 10px;
   overflow-y: scroll;
+   overflow-x: hidden;
 }
 .schedule{
   max-width: 2000;

@@ -82,8 +82,11 @@ export default {
   min-width: 270px;
   height: calc(100vh - 90px);
   background-color: rgb(52, 147, 231);
+  padding-top:0;
   padding: 8px;
   color: whitesmoke;
+  box-shadow: 1px 0px 9px #3f3e3e;
+  z-index: 50;
 }
 
 .icon-container{
@@ -91,7 +94,6 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border-top: 4px whitesmoke solid;
   border-bottom: 4px whitesmoke solid;
   padding: 6px 0px;
 }
