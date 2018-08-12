@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <div v-if="loading" class="loading-container">
+    <div v-if="loading || !isAuthenticated" class="loading-container">
       <h2 class="loading-title">Cargando...</h2>
       <BounceLoader :loading="loading" color="#3493E7"/>
-      <h4 class="loading-text">
+      <h4 class="loading-text" v-if="!isAuthenticated">
+        Lo redirigiremos a la página de autenticación <br>
+        <academical-note>Después de terminar, volverá acá</academical-note>
+      </h4>
+      <h4 class="loading-text" v-else>
         Estamos verificando los cupos disponibles de los cursos <br>
         Esto puede tomar varios segundos <br>
         Gracias por su paciencia! <br>
@@ -37,11 +41,13 @@
       </div>
       <flash-message class="flash-message"/>
     </div>
-    <AcademicalModalMessage v-if="showMessage && !loading" :show="showMessage" @close="showMessage = false"/>
+    <AcademicalModalMessage v-if="showMessage && !loading &&!isAuthenticated" :show="showMessage" @close="showMessage = false"/>
   </div>
+  
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import AcademicalSidebar from './components/Sidebar';
 import AcademicalBanner from './components/Banner';
 import CustomSchedule from './components/CustomSchedule';
@@ -52,6 +58,8 @@ import BounceLoader from 'vue-spinner/src/PulseLoader.vue';
 import courses from './../courses';
 import courses8A from './../courses8A';
 import courses8B from './../courses8B';
+
+import store from './store'
 
 const jsonDays = ["L", "M", "I", "J", "V", "S", "D"];
 
@@ -80,6 +88,10 @@ export default {
     }
   },
   computed: {
+    ...mapGetters([
+      'isAuthenticated',
+      // ...
+    ]),
     schedule(){
       let schedule = [
         [],[],[],[],[],[] //Models days from monday to saturday
@@ -356,6 +368,8 @@ export default {
     }
   },
   mounted(){
+    store.dispatch('callGraphApi');
+    console.log('llega');
     this.checkEmptyCourses();
     //Will refresh every 5 mins empty courses
     //Props to El_kabs for implementing that awesome API! Si lees esto eres un crack.
