@@ -1,12 +1,13 @@
 <template>
-<div>
+<div class="container">
   <div class="utility-page-wrap">
     <div id="Owly" class="html-embed html-embed-2 w-hidden-small w-hidden-tiny w-embed w-iframe"><iframe src="https://theowo.xyz/" frameborder="0" width="400px" height="300px"></iframe></div>
     <div class="utility-page-content w-password-page w-form">
       <form method="post" action="/.wf_auth" class="utility-page-form w-password-page">
-        <h2 class="heading-5">Hello human!</h2>
+        <h2 class="hello-message">Hello human!</h2>
+
         <div style="display:none" class="w-password-page w-embed w-script"><input type="hidden" name="path" value="<%WF_FORM_VALUE_PATH%>"><input type="hidden" name="page" value="<%WF_FORM_VALUE_PAGE%>"></div><input type="password" class="text-field w-password-page w-input" maxlength="256" autofocus="true" name="pass" placeholder="Enter your password" id="password"><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-password-page w-button">
-        <div class="layer-helper w-hidden-medium w-hidden-small w-hidden-tiny w-clearfix"><a href="#" class="link blue_button w-button" @click="loginMS"><strong>Start with your Microsoft Account</strong></a><a href="#" class="link red_button w-button"><strong>Start with your Google Account</strong></a></div>
+        <div class="layer-helper w-hidden-medium w-hidden-small w-hidden-tiny w-clearfix"><a href="#" class="link red_button w-button"><svg class="svg_svg2"><use xlink:href="./src/styles/iconos.svg#google-icon"></use></svg><strong class="sign-in-with">Sign in with Google</strong></a><a href="#" class="link blue_button w-button" @click="loginMS"><svg class="svg_svg1"><use xlink:href="./src/styles/iconos.svg#ms-icon"></use></svg><strong class="sign-in-with">Sign in with Microsoft</strong></a></div>
       </form>
       <div class="w-password-page w-form-fail">
         <div>Incorrect password. Please try again.</div>
@@ -61,6 +62,47 @@ export default {
 @import "./../styles/normalize.css";
 @import "./../styles/webflow.css";
 @import "./../styles/login.css";
+
+.hello-message{
+  font-size:4rem;
+}
+
+.sign-in-with{
+  font-size:1.5rem;
+  font-weight:500;
+  margin:15px 0;
+  margin-left: 5px;
+  display:inline-block;
+}
+
+.link{
+  &.red_button, &.blue_button{
+    width:350px;
+
+    padding:2px 21px;
+    align-self:flex-end;
+  }
+}
+
+.svg_svg1,.svg_svg2 {
+  width:50px;
+  height:50px;
+  fill:white;
+  float:left;
+  transform: scale(0.8);
+ 
+
+  g{
+    path{
+        width: 100%; height: auto;
+    }
+  }
+}
+
+.container{
+  height:100vh;
+  overflow-y:scroll;
+}
 </style>
 
 
