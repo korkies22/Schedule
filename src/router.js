@@ -6,7 +6,7 @@ import LoginMS from './components/LoginMS'
 
 Vue.use(Router)
 import store from './store.js'
-
+ 
 export default new Router({
     hashbang: false,
    //abstract: true,
@@ -16,11 +16,6 @@ export default new Router({
   transitionOnLoad: true,
   root: '/',
     routes: [
-        {
-            path:'/#id_token=*',
-            name:'LoginMS',
-            component:LoginMS
-        },
         {
             path: '/',
             name: 'Login',
@@ -43,13 +38,6 @@ export default new Router({
                     next({ path: '/' })
                 }
                 next()
-            }
-        },
-        {
-            path:'*',
-            beforeEnter: (to, from, next) => {
-                console.log('llegue reload')
-                window.location.reload(false); 
             }
         }
     ]

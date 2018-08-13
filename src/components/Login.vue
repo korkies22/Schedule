@@ -1,16 +1,5 @@
 <template>
 <div>
-    <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation w-nav">
-        <div class="container-4 w-container">
-            <a href="index.html" class="brand-link w-nav-brand">
-            <div class="logo-text">Owly-horarios</div>
-            </a>
-            <nav role="navigation" class="nav-menu w-nav-menu"><a href="#Features" id="btn-features" class="nav-link w-nav-link">Features</a><a href="#Pricing" class="nav-link w-nav-link">Pricing</a><a href="#Universities" class="nav-link w-nav-link">Contact us!</a><a href="#Universities" class="nav-link w-nav-link">Log in</a></nav>
-            <div class="nav-link menu w-nav-button">
-                <div class="w-icon-nav-menu"></div>
-            </div>
-        </div>
-    </div>
   <div class="utility-page-wrap">
     <div id="Owly" class="html-embed html-embed-2 w-hidden-small w-hidden-tiny w-embed w-iframe"><iframe src="https://theowo.xyz/" frameborder="0" width="400px" height="300px"></iframe></div>
     <div class="utility-page-content w-password-page w-form">
@@ -51,7 +40,6 @@ export default {
     name: 'Hello',
     methods:{
         loginMS(){
-            console.log('me llamaron')
             this.$store.dispatch('loginMS');
         },
     },

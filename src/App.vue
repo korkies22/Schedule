@@ -1,14 +1,16 @@
 <template>
-  <router-view></router-view>
+<div>
+<banner></banner>
+ <router-view></router-view>
+ </div>
 </template>
 
 <script>
-
+import Banner from './components/Banner'
 export default {
   name: 'app',
-  data () {
-    return {
-    }
+  components:{
+    Banner
   }
 }
 </script>
@@ -28,14 +30,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-.loading-title{
-
-}
-
-.loading-text{
-  
 }
 
 body{

@@ -387,14 +387,6 @@ export default {
   text-align: center;
 }
 
-.loading-title{
-
-}
-
-.loading-text{
-  
-}
-
 body{
   margin: 0px;
 }
@@ -410,6 +402,7 @@ body{
 #container{
   display: flex;
   flex-direction: row;
+  margin-top:72px;
 }
 .schedule-container{
   width: 100%;

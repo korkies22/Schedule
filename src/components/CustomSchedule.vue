@@ -14,7 +14,7 @@
         </table>
    <div id="courses-grid" class="schedule-grid">
        <div v-for="course in scheduleArray" @click="removeClass(course)" class="course-cell" :style="coursePosition(course)"><p class="course-title">{{classTitle(course.title)}}</p><p class="classroom">{{course.classroom.replace("_", " ")}}</p></div>
-       <div v-for="hoveredClass in hoveredClassArray" class="course-cell" :style="[coursePosition(hoveredClass), hoveredStyle(hoveredClass)]"><p class="course-title">{{hoveredClass.title}}</p><p class="classroom">{{hoveredClass.classroom.replace("_", " ")}}</p></div>
+       <div v-for="hoveredClass in hoveredClassArray" class="course-cell" :style="[coursePosition(hoveredClass), hoveredStyle(hoveredClass)]"><p class="course-title">{{classTitle(hoveredClass.title)}}</p><p class="classroom">{{hoveredClass.classroom.replace("_", " ")}}</p></div>
    </div> 
 </div>
 </template>
