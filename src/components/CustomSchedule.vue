@@ -90,7 +90,7 @@ export default {
            return Date.today().last().monday().add(n).day().toString('d') === Date.today().day().toString('d');
       },
       currentHour(n){
-          console.log(n);
+          //console.log(n);
           if(((n-1)%2)!==0) return '';
           return this.timeGround[0]+(n-1)/2 + ':00';
       },
@@ -182,7 +182,7 @@ export default {
 
       let grid= document.getElementById('courses-grid');
       grid.style.gridTemplateColumns="50px repeat("+this.weekGround.length+",1fr)" 
-      grid.style.gridTemplateRows="73px repeat("+this.hoursCount+",30px)" 
+      grid.style.gridTemplateRows="calc(6px + 4rem) repeat("+this.hoursCount+",30px)" 
 
   }
 
@@ -226,6 +226,7 @@ export default {
     text-align: left;
     font-size: 0.7rem;
     margin:0;
+    height:1rem;
     margin-top:3px;
     margin-left:5px;
 }
@@ -235,8 +236,8 @@ export default {
     font-size: 3rem;
     font-weight: 200;
     margin:0;
+    height:3rem;
 }
-
 .container{
     position:relative;
     height: 100%;

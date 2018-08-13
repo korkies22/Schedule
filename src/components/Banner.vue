@@ -2,12 +2,31 @@
   <div class="bannerContainer">
     <h1>Academical</h1>
     <h4>- lite</h4>
+
+    <button @click="cerrarSesion">Cerrar sesión</button>
   </div>
 </template>
 
 <script>
 export default {
-  
+  methods:{
+    cerrarSesion(){
+      this.$store.dispatch('closeSesion');
+      }
+    },
+    computed:{
+        isAuthenticated()
+        {
+          console.log(this.$store);
+           return this.$store.getters.isAuthenticated;
+        }
+    },
+    watch: {
+      isAuthenticated(val) {
+        console.log('regreso a login');
+         if(!val) this.$router.replace({ path: '/' });
+      }
+  }  
 }
 </script>
 

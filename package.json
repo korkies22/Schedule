@@ -15,6 +15,7 @@
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.11",
     "vue-flash-message": "^0.6.2",
+    "vue-router": "^3.0.1",
     "vue-schedule": "^2.0.4",
     "vue-spinner": "^1.0.3",
     "vuex": "^3.0.1"
@@ -32,6 +33,9 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
