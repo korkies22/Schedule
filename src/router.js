@@ -34,7 +34,7 @@ export default new Router({
             name: 'Schedule',
             component: Schedule,
             beforeEnter: (to, from, next) => {
-                if(!store.getters.isAuthenticated){
+                if(!store.getters.isAuthenticated){ 
                     next({ path: '/' })
                 }
                 next()

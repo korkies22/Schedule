@@ -37,6 +37,7 @@
       <flash-message class="flash-message"/>
     </div>
     <AcademicalModalMessage v-if="showMessage && !loading" :show="showMessage" @close="showMessage = false"/>
+    <bot-chat></bot-chat>
   </div>
 </template>
 
@@ -45,6 +46,7 @@ import AcademicalSidebar from './Sidebar';
 import AcademicalBanner from './Banner';
 import CustomSchedule from './CustomSchedule';
 import AcademicalModalMessage from './ModalMessage';
+import BotChat from './BotChat';
 
 import BounceLoader from 'vue-spinner/src/PulseLoader.vue';
 
@@ -65,7 +67,8 @@ export default {
     AcademicalSidebar,
     CustomSchedule,
     BounceLoader,
-    AcademicalModalMessage
+    AcademicalModalMessage,
+    BotChat
   },
   data () {
     return {

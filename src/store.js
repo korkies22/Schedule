@@ -31,6 +31,9 @@ const store = new Vuex.Store({
     getters: {
         isAuthenticated: state => {
             return state.isAuthenticated ===true;
+        },
+        myToken: state => {
+            return state.token;
         }
     },
     mutations: {
@@ -47,7 +50,8 @@ const store = new Vuex.Store({
             });
             state.userAgent=null;
             state.isAuthenticated= false;
-            state.typeAuth=""
+            state.typeAuth="";
+            state.token=null;
             userAgentApplication.logout();
           }
     },
