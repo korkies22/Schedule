@@ -1,6 +1,6 @@
 <template>
-<div id="bot-window">
-    <div id="bot"/>
+<div id="bot-window" class="wc-narrow">
+    <div id="bot" class="wc-narrow"/>
 </div>
 </template>
 
@@ -9,14 +9,13 @@ export default {
     name: 'botChat',
     computed:{
         userId(){
-            console.log('llamado', this.$store.getters.myToken)
             return this.$store.getters.myToken;
         }
     },
     mounted(){
         console.log('elbot', this)
         BotChat.App({
-        directLine: { secret: "V1606ipkob4.cwA.uJU.kXPUw2TeoN73mLBKuyBixDLO8kMdqjpElyhB0tdGoA8" },
+        directLine: { secret: "yDHaP6BPqSY.cwA.zp8.bzLkkPwwSPrPK7E07Tno3_pb7t19QVXng7VyLKKy9jM" },
         user: { id: this.userId },
         bot: { id: 'botid' },
         resize: 'detect'

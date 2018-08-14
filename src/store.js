@@ -30,6 +30,7 @@ const store = new Vuex.Store({
     },
     getters: {
         isAuthenticated: state => {
+            console.log('llega auth', state)
             return state.isAuthenticated ===true;
         },
         myToken: state => {
@@ -38,6 +39,7 @@ const store = new Vuex.Store({
     },
     mutations: {
         userLogged(state,payload) {
+            console.log('no me digan que se mutó')
             // mutate state
             state.userAgent=payload.user;
             state.isAuthenticated= true;
@@ -73,8 +75,23 @@ const store = new Vuex.Store({
             commit('closeSesion');
         },
         verifyLogged({commit}){
+            console.log('sera por aqui?')
             if(userAgentApplication.getUser()){
-                commit('userLogged',{user:userAgentApplication});
+                userAgentApplication.acquireTokenSilent(graphAPIScopes)
+            .then(function (idToken) {
+                //After the access token is acquired, call the Web API, sending the acquired token
+                
+                commit('userLogged',{user:userAgentApplication, typeAuth: "Microsoft", token:idToken});
+            }, function (error) {
+                // If the acquireTokenSilent() method fails, then acquire the token interactively via acquireTokenRedirect().
+                // In this case, the browser will redirect user back to the Azure Active Directory v2 Endpoint so the user 
+                // can reenter the current username/ password and/ or give consent to new permissions your application is requesting.
+                // After authentication/ authorization completes, this page will be reloaded again and callGraphApi() will be executed on page load.
+                // Then, acquireTokenSilent will then get the token silently, the Graph API call results will be made and results will be displayed in the page.
+                if (error) {
+                    console.log('error with token');
+                }
+            });
             }
         }
     }

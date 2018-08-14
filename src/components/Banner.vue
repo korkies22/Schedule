@@ -24,25 +24,22 @@ export default {
     computed:{
         isAuthenticated()
         {
-          console.log(this.$store);
            return this.$store.getters.isAuthenticated;
         }
     },
     watch: {
       isAuthenticated(val) {
-        console.log('regreso a login');
          if(!val) this.$router.replace({ path: '/' });
       }
   }  
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "./../styles/normalize.css";
+@import "./../styles/webflow.css";
+@import "./../styles/login.css";
 
-.bannerContainer{
-  box-shadow: 0px 1px 9px #3f3e3e;
 
-  
-}
 
 </style>
