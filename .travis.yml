@@ -7,6 +7,7 @@ script:
   - npm run build
 
 deploy:
+  local-dir: build
   provider: pages
   fqdn: schedule.theowly.io
   skip-cleanup: true
