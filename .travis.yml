@@ -6,8 +6,24 @@ node_js:
 script:
   - npm run build
 
+before_deploy:
+  - mkdir build
+  - mv dist build/dist
+  - mv src/assets build/assets
+  - cp LICENSE build/LICENSE
+  - cp README.md build/README.md
+  - cp courses.js build/courses.js
+  - cp courses8A.js build/courses8A.js
+  - cp courses8B.js build/courses8B.js
+  - cp date.js build/date.js
+  - cp weeks.js build/weeks.js
+  - cp msalconfig.js build/msalconfig.js
+  - cp index.html build/index.html
+  - cp build/index.html build/404.html
+
 deploy:
   provider: pages
+  local-dir: build
   fqdn: schedule.theowly.io
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
