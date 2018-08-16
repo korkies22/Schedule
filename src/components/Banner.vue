@@ -1,5 +1,5 @@
 <template>
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation w-nav bannerContainer">
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navigation w-nav">
         <div class="container-4 w-container">
             <a href="index.html" class="brand-link w-nav-brand">
             <div class="logo-text">Owly-horarios</div>
