@@ -33,6 +33,9 @@
       </div>
     </div>
   </div>
+  <footer>
+      
+  </footer>
 </div>
 </template>
 
@@ -64,11 +67,6 @@ export default {
   height:100vh;
   overflow-y:scroll;
 }
-
-.bannerContainer{
-  box-shadow: 0px 1px 9px #3f3e3e;
-}
-
 .hello-message{
   font-size:4rem;
 }
